@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Map, FlaskConical, Brain, AlertTriangle, Palmtree, Heart } from "lucide-react";
+import heroImage from "@/assets/hero-stlucia.jpg";
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },

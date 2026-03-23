@@ -13,7 +13,9 @@ export default function Home() {
   return (
     <div>
       {/* Hero */}
-      <section className="hero-gradient text-primary-foreground py-24 md:py-32 relative overflow-hidden">
+      <section className="relative py-24 md:py-32 overflow-hidden">
+        <img src={heroImage} alt="Saint Lucia aerial view" className="absolute inset-0 w-full h-full object-cover" width={1920} height={800} />
+        <div className="absolute inset-0 hero-gradient opacity-80" />
         <div className="absolute inset-0 opacity-10" style={{
           backgroundImage: "radial-gradient(circle at 20% 80%, hsl(152 55% 60%) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(195 70% 60%) 0%, transparent 50%)"
         }} />

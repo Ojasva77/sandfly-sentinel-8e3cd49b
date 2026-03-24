@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import RiskMap from "./pages/RiskMap";
-import Simulation from "./pages/Simulation";
+import CommunityTips from "./pages/CommunityTips";
 import Prediction from "./pages/Prediction";
 import Results from "./pages/Results";
 import About from "./pages/About";

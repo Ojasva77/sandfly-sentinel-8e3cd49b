@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ["Space Grotesk", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        display: ["Lilita One", "cursive"],
+        body: ["Nunito", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -67,6 +67,11 @@ export default {
           high: "hsl(var(--risk-high))",
           critical: "hsl(var(--risk-critical))",
         },
+        ocean: "hsl(var(--ocean))",
+        sand: "hsl(var(--sand))",
+        palm: "hsl(var(--palm))",
+        sunset: "hsl(var(--sunset))",
+        coral: "hsl(var(--coral))",
         info: "hsl(var(--info))",
         warning: "hsl(var(--warning))",
         success: "hsl(var(--success))",
@@ -90,15 +95,20 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
-        pulse_risk: {
-          "0%, 100%": { opacity: "0.6" },
-          "50%": { opacity: "1" },
+        wave: {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(-25px)" },
+        },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-8px)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "pulse-risk": "pulse_risk 2s ease-in-out infinite",
+        wave: "wave 4s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
     },
   },

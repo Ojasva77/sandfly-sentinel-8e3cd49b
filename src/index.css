@@ -2,99 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    --background: 150 10% 97%;
-    --foreground: 160 30% 10%;
+    --background: 40 33% 96%;
+    --foreground: 200 25% 12%;
 
-    --card: 150 15% 99%;
-    --card-foreground: 160 30% 10%;
+    --card: 40 30% 99%;
+    --card-foreground: 200 25% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 160 30% 10%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 200 25% 12%;
 
-    --primary: 152 55% 28%;
-    --primary-foreground: 150 20% 98%;
+    --primary: 187 70% 38%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 38 70% 55%;
-    --secondary-foreground: 38 80% 12%;
+    --secondary: 35 85% 55%;
+    --secondary-foreground: 35 90% 10%;
 
-    --muted: 150 10% 93%;
-    --muted-foreground: 160 10% 45%;
+    --muted: 40 20% 92%;
+    --muted-foreground: 200 10% 42%;
 
-    --accent: 195 70% 42%;
-    --accent-foreground: 195 90% 98%;
+    --accent: 145 50% 42%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 150 12% 88%;
-    --input: 150 12% 88%;
-    --ring: 152 55% 28%;
+    --border: 40 18% 86%;
+    --input: 40 18% 86%;
+    --ring: 187 70% 38%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 150 15% 96%;
-    --sidebar-foreground: 160 30% 10%;
-    --sidebar-primary: 152 55% 28%;
-    --sidebar-primary-foreground: 150 20% 98%;
-    --sidebar-accent: 150 15% 92%;
-    --sidebar-accent-foreground: 160 30% 10%;
-    --sidebar-border: 150 12% 88%;
-    --sidebar-ring: 152 55% 28%;
+    --sidebar-background: 40 25% 95%;
+    --sidebar-foreground: 200 25% 12%;
+    --sidebar-primary: 187 70% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 40 20% 90%;
+    --sidebar-accent-foreground: 200 25% 12%;
+    --sidebar-border: 40 18% 86%;
+    --sidebar-ring: 187 70% 38%;
 
     /* Custom tokens */
     --danger: 0 72% 51%;
-    --warning: 38 92% 50%;
-    --success: 152 55% 28%;
-    --info: 195 70% 42%;
+    --warning: 35 92% 50%;
+    --success: 145 50% 42%;
+    --info: 187 70% 38%;
 
-    --risk-low: 152 55% 45%;
+    --risk-low: 145 50% 45%;
     --risk-medium: 45 90% 50%;
     --risk-high: 25 90% 50%;
     --risk-critical: 0 72% 51%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(152 55% 28%), hsl(195 70% 42%));
-    --gradient-card: linear-gradient(180deg, hsl(150 15% 99%), hsl(150 10% 96%));
-    --gradient-risk: linear-gradient(90deg, hsl(152 55% 45%), hsl(45 90% 50%), hsl(25 90% 50%), hsl(0 72% 51%));
+    --ocean: 195 80% 50%;
+    --sand: 40 50% 82%;
+    --palm: 145 55% 35%;
+    --sunset: 15 85% 55%;
+    --coral: 350 70% 60%;
 
-    --shadow-card: 0 4px 24px -4px hsl(152 55% 28% / 0.08);
-    --shadow-elevated: 0 12px 40px -8px hsl(152 55% 28% / 0.12);
+    --gradient-hero: linear-gradient(135deg, hsl(187 70% 38%), hsl(195 80% 50%));
+    --gradient-sunset: linear-gradient(135deg, hsl(35 85% 55%), hsl(15 85% 55%), hsl(350 70% 60%));
+    --gradient-ocean: linear-gradient(180deg, hsl(195 80% 50%), hsl(187 70% 38%));
+    --gradient-card: linear-gradient(180deg, hsl(40 30% 99%), hsl(40 25% 96%));
+    --gradient-risk: linear-gradient(90deg, hsl(145 50% 45%), hsl(45 90% 50%), hsl(25 90% 50%), hsl(0 72% 51%));
 
-    --font-display: 'Space Grotesk', sans-serif;
-    --font-body: 'Inter', sans-serif;
+    --shadow-card: 0 4px 24px -4px hsl(187 70% 38% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(187 70% 38% / 0.15);
+
+    --font-display: 'Lilita One', cursive;
+    --font-body: 'Nunito', sans-serif;
   }
 
   .dark {
-    --background: 160 20% 6%;
-    --foreground: 150 10% 95%;
-    --card: 160 18% 9%;
-    --card-foreground: 150 10% 95%;
-    --popover: 160 18% 9%;
-    --popover-foreground: 150 10% 95%;
-    --primary: 152 55% 45%;
-    --primary-foreground: 160 30% 5%;
-    --secondary: 38 60% 50%;
-    --secondary-foreground: 38 80% 95%;
-    --muted: 160 15% 15%;
-    --muted-foreground: 150 10% 60%;
-    --accent: 195 60% 50%;
-    --accent-foreground: 195 90% 5%;
+    --background: 200 20% 8%;
+    --foreground: 40 20% 93%;
+    --card: 200 18% 11%;
+    --card-foreground: 40 20% 93%;
+    --popover: 200 18% 11%;
+    --popover-foreground: 40 20% 93%;
+    --primary: 187 65% 48%;
+    --primary-foreground: 200 30% 6%;
+    --secondary: 35 75% 50%;
+    --secondary-foreground: 35 90% 95%;
+    --muted: 200 15% 16%;
+    --muted-foreground: 40 10% 60%;
+    --accent: 145 45% 45%;
+    --accent-foreground: 200 30% 6%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 160 12% 18%;
-    --input: 160 12% 18%;
-    --ring: 152 55% 45%;
-    --sidebar-background: 160 18% 8%;
-    --sidebar-foreground: 150 10% 95%;
-    --sidebar-primary: 152 55% 45%;
-    --sidebar-primary-foreground: 160 30% 5%;
-    --sidebar-accent: 160 15% 14%;
-    --sidebar-accent-foreground: 150 10% 95%;
-    --sidebar-border: 160 12% 18%;
-    --sidebar-ring: 152 55% 45%;
+    --border: 200 12% 20%;
+    --input: 200 12% 20%;
+    --ring: 187 65% 48%;
+    --sidebar-background: 200 18% 10%;
+    --sidebar-foreground: 40 20% 93%;
+    --sidebar-primary: 187 65% 48%;
+    --sidebar-primary-foreground: 200 30% 6%;
+    --sidebar-accent: 200 15% 15%;
+    --sidebar-accent-foreground: 40 20% 93%;
+    --sidebar-border: 200 12% 20%;
+    --sidebar-ring: 187 65% 48%;
   }
 }
 
@@ -108,6 +116,7 @@
   }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
+    letter-spacing: 0.02em;
   }
 }
 
@@ -118,12 +127,31 @@
     border-radius: 4px;
   }
   .glass-card {
-    background: hsl(var(--card) / 0.8);
+    background: hsl(var(--card) / 0.85);
     backdrop-filter: blur(12px);
     border: 1px solid hsl(var(--border));
     box-shadow: var(--shadow-card);
   }
   .hero-gradient {
     background: var(--gradient-hero);
+  }
+  .sunset-gradient {
+    background: var(--gradient-sunset);
+  }
+  .ocean-gradient {
+    background: var(--gradient-ocean);
+  }
+  .island-wave {
+    position: relative;
+  }
+  .island-wave::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30 C200 0 400 60 600 30 C800 0 1000 60 1200 30 L1200 60 L0 60Z' fill='%23f5f0e8'/%3E%3C/svg%3E") no-repeat bottom center;
+    background-size: cover;
   }
 }

@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import RiskMap from "./pages/RiskMap";
-import Simulation from "./pages/Simulation";
+import CommunityTips from "./pages/CommunityTips";
 import Prediction from "./pages/Prediction";
 import Results from "./pages/Results";
 import About from "./pages/About";
@@ -24,7 +24,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/map" element={<RiskMap />} />
-            <Route path="/simulation" element={<Simulation />} />
+            <Route path="/community" element={<CommunityTips />} />
             <Route path="/prediction" element={<Prediction />} />
             <Route path="/results" element={<Results />} />
             <Route path="/about" element={<About />} />

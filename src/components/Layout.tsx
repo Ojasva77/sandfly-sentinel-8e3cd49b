@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Bug, Map, FlaskConical, Brain, BarChart3, BookOpen, Menu, X } from "lucide-react";
+import { Bug, Map, Users, Brain, BarChart3, BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import mssLogo from "@/assets/mss-logo.jpg";
@@ -7,7 +7,7 @@ import mssLogo from "@/assets/mss-logo.jpg";
 const navItems = [
   { path: "/", label: "Home", icon: Bug },
   { path: "/map", label: "Risk Map", icon: Map },
-  { path: "/simulation", label: "Simulation", icon: FlaskConical },
+  { path: "/community", label: "Community", icon: Users },
   { path: "/prediction", label: "AI Prediction", icon: Brain },
   { path: "/results", label: "Results", icon: BarChart3 },
   { path: "/about", label: "About", icon: BookOpen },

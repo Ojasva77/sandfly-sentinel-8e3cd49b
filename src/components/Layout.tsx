@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import { Bug, Map, FlaskConical, Brain, BarChart3, BookOpen, Menu, X } from "lucide-react";
+import { Bug, Map, Users, Brain, BarChart3, BookOpen, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import mssLogo from "@/assets/mss-logo.jpg";

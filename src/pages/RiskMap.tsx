@@ -3,29 +3,11 @@ import { MapContainer, TileLayer, CircleMarker, Tooltip, useMapEvents, Marker, P
 import { motion, AnimatePresence } from "framer-motion";
 import L from "leaflet";
 import { locations, calculateRiskScore, getRiskLevel, getRiskBgColor } from "@/data/saintLuciaData";
+import { useBiteReports } from "@/context/BiteReportContext";
 import { TreePine, MapPin, Bug, Droplets, Wind, CloudRain, Trees } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 
-// ── Types ──────────────────────────────────────────────────────────
-interface BiteReport {
-  id: number;
-  lat: number;
-  lng: number;
-  time: string;
-  conditions: string[];
-  name?: string;
-  bodyPart?: string;
-  allergies?: string;
-}
-
-// ── Demo community bite reports (synced with Report page) ──────────
-const demoBiteReports: BiteReport[] = [
-  { id: 1, lat: 13.8563 + 0.003, lng: -61.0566 - 0.002, time: "Evening", conditions: ["Humid", "No wind", "Near forest"], name: "Maria J.", bodyPart: "Ankles", allergies: "Mild swelling" },
-  { id: 2, lat: 13.82 + 0.004, lng: -60.90 - 0.003, time: "Afternoon", conditions: ["Humid", "Standing water nearby"], name: "Keon B.", bodyPart: "Arms", allergies: "None" },
-  { id: 3, lat: 13.87 - 0.002, lng: -61.04 + 0.001, time: "Evening", conditions: ["No wind", "Near forest", "Humid"], name: "Aunty Rose", bodyPart: "Legs", allergies: "Itchy rash for 2 days" },
-  { id: 4, lat: 14.01 + 0.002, lng: -60.99 - 0.001, time: "Morning", conditions: ["Rainy", "Humid"], name: "Jason T.", bodyPart: "Neck" },
-  { id: 5, lat: 13.77 + 0.003, lng: -61.05 + 0.002, time: "Night", conditions: ["No wind", "Near forest"], name: "Ms. Charles", bodyPart: "Legs", allergies: "Swelling" },
-];
+// (BiteReport type and demo data now live in BiteReportContext)
 
 // ── Slider ─────────────────────────────────────────────────────────
 function RangeSlider({ label, value, onChange, min, max, unit, icon: Icon, color }: {
@@ -152,10 +134,10 @@ function FactorBar({ label, value, max, icon: Icon, color, isTop }: {
 
 // ── Main Component ─────────────────────────────────────────────────
 export default function RiskMap() {
+  const { reports: biteReports, addReport } = useBiteReports();
   const [rainfallMod, setRainfallMod] = useState(0);
   const [humidityMod, setHumidityMod] = useState(0);
   const [showForest, setShowForest] = useState(false);
-  const [biteReports, setBiteReports] = useState<BiteReport[]>(demoBiteReports);
   const [showBiteForm, setShowBiteForm] = useState(false);
   const [tapResult, setTapResult] = useState<{ lat: number; lng: number; data: ReturnType<typeof estimatePointRisk> } | null>(null);
 
@@ -191,15 +173,17 @@ export default function RiskMap() {
   }, [rainfallMod, humidityMod]);
 
   const handleBiteSubmit = () => {
-    const loc = locations.find(l => l.id === biteLocation) || locations[0];
-    const report: BiteReport = {
-      id: Date.now(),
-      lat: loc.lat + (Math.random() - 0.5) * 0.01,
-      lng: loc.lng + (Math.random() - 0.5) * 0.01,
-      time: biteTime,
+    const loc = locations.find(l => l.id === biteLocation);
+    addReport({
+      name: "Anonymous",
+      location: loc?.name || "Unknown",
+      timeOfBite: biteTime,
+      bodyPart: "",
       conditions: biteConditions,
-    };
-    setBiteReports(prev => [...prev, report]);
+      allergies: "",
+      notes: "",
+      date: new Date().toISOString().split("T")[0],
+    });
     setShowBiteForm(false);
     setBiteConditions([]);
   };
@@ -263,8 +247,8 @@ export default function RiskMap() {
                     <strong className="text-sm">🦟 {r.name || "Anonymous"}</strong>
                     <div style={{ marginTop: 4 }}>
                       {r.bodyPart && <div>🦵 Bitten on: <strong>{r.bodyPart}</strong></div>}
-                      <div>🕐 Time: <strong>{r.time}</strong></div>
-                      {r.allergies && r.allergies !== "None" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
+                      <div>🕐 Time: <strong>{r.timeOfBite}</strong></div>
+                      {r.allergies && r.allergies !== "None" && r.allergies !== "" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
                       {r.conditions.length > 0 && <div style={{ marginTop: 3 }}>Conditions: {r.conditions.join(", ")}</div>}
                     </div>
                   </div>

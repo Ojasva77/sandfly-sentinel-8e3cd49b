@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { BiteReportProvider } from "./context/BiteReportContext";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import RiskMap from "./pages/RiskMap";
@@ -20,20 +21,22 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/map" element={<RiskMap />} />
-            <Route path="/community" element={<CommunityTips />} />
-            <Route path="/report" element={<ReportBite />} />
-            <Route path="/prediction" element={<Prediction />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Layout>
-      </BrowserRouter>
+      <BiteReportProvider>
+        <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/map" element={<RiskMap />} />
+              <Route path="/community" element={<CommunityTips />} />
+              <Route path="/report" element={<ReportBite />} />
+              <Route path="/prediction" element={<Prediction />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
+        </BrowserRouter>
+      </BiteReportProvider>
     </TooltipProvider>
   </QueryClientProvider>
 );

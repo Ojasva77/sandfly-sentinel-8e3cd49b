@@ -259,10 +259,14 @@ export default function RiskMap() {
             {biteReports.map((r) => (
               <Marker key={r.id} position={[r.lat, r.lng]} icon={biteIcon}>
                 <Popup>
-                  <div className="text-xs">
-                    <strong>🦟 Bite Report</strong><br />
-                    Time: {r.time}<br />
-                    {r.conditions.length > 0 && <>Conditions: {r.conditions.join(", ")}</>}
+                  <div className="text-xs min-w-[160px]">
+                    <strong className="text-sm">🦟 {r.name || "Anonymous"}</strong>
+                    <div style={{ marginTop: 4 }}>
+                      {r.bodyPart && <div>🦵 Bitten on: <strong>{r.bodyPart}</strong></div>}
+                      <div>🕐 Time: <strong>{r.time}</strong></div>
+                      {r.allergies && r.allergies !== "None" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
+                      {r.conditions.length > 0 && <div style={{ marginTop: 3 }}>Conditions: {r.conditions.join(", ")}</div>}
+                    </div>
                   </div>
                 </Popup>
               </Marker>

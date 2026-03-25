@@ -173,15 +173,17 @@ export default function RiskMap() {
   }, [rainfallMod, humidityMod]);
 
   const handleBiteSubmit = () => {
-    const loc = locations.find(l => l.id === biteLocation) || locations[0];
-    const report: BiteReport = {
-      id: Date.now(),
-      lat: loc.lat + (Math.random() - 0.5) * 0.01,
-      lng: loc.lng + (Math.random() - 0.5) * 0.01,
-      time: biteTime,
+    const loc = locations.find(l => l.id === biteLocation);
+    addReport({
+      name: "Anonymous",
+      location: loc?.name || "Unknown",
+      timeOfBite: biteTime,
+      bodyPart: "",
       conditions: biteConditions,
-    };
-    setBiteReports(prev => [...prev, report]);
+      allergies: "",
+      notes: "",
+      date: new Date().toISOString().split("T")[0],
+    });
     setShowBiteForm(false);
     setBiteConditions([]);
   };

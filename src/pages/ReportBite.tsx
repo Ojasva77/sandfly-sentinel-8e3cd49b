@@ -7,40 +7,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { locations } from "@/data/saintLuciaData";
 import { useBiteReports } from "@/context/BiteReportContext";
 
-interface BiteRecord {
-  id: string;
-  name: string;
-  location: string;
-  timeOfBite: string;
-  date: string;
-  bodyPart: string;
-  conditions: string[];
-  allergies: string;
-  notes: string;
-  createdAt: Date;
-}
-
 const timeOptions = ["Morning (6am–12pm)", "Afternoon (12pm–4pm)", "Evening (4pm–7pm)", "Night (7pm–6am)"];
 const conditionOptions = ["Humid", "Rainy", "No wind", "Near forest", "Standing water nearby", "Cloudy"];
 const bodyParts = ["Ankles", "Legs", "Arms", "Hands", "Face", "Neck", "Back", "Other"];
-
-const demoRecords: BiteRecord[] = [
-  {
-    id: "d1", name: "Maria J.", location: "Soufrière", timeOfBite: "Evening (4pm–7pm)",
-    date: "2026-03-20", bodyPart: "Ankles", conditions: ["Humid", "No wind", "Near forest"],
-    allergies: "Mild swelling", notes: "Was near the river, sandflies were very active after rain stopped.", createdAt: new Date("2026-03-20"),
-  },
-  {
-    id: "d2", name: "Keon B.", location: "Micoud", timeOfBite: "Afternoon (12pm–4pm)",
-    date: "2026-03-22", bodyPart: "Arms", conditions: ["Humid", "Standing water nearby"],
-    allergies: "None", notes: "Playing football near the field with puddles from last night's rain.", createdAt: new Date("2026-03-22"),
-  },
-  {
-    id: "d3", name: "Aunty Rose", location: "Fond St Jacques", timeOfBite: "Evening (4pm–7pm)",
-    date: "2026-03-18", bodyPart: "Legs", conditions: ["No wind", "Near forest", "Humid"],
-    allergies: "Itchy rash for 2 days", notes: "Sitting outside without repellent. The bites were worst on exposed skin.", createdAt: new Date("2026-03-18"),
-  },
-];
 
 export default function ReportBite() {
   const [records, setRecords] = useState<BiteRecord[]>(demoRecords);

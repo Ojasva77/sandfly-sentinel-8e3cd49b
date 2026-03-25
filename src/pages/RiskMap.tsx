@@ -247,8 +247,8 @@ export default function RiskMap() {
                     <strong className="text-sm">🦟 {r.name || "Anonymous"}</strong>
                     <div style={{ marginTop: 4 }}>
                       {r.bodyPart && <div>🦵 Bitten on: <strong>{r.bodyPart}</strong></div>}
-                      <div>🕐 Time: <strong>{r.time}</strong></div>
-                      {r.allergies && r.allergies !== "None" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
+                      <div>🕐 Time: <strong>{r.timeOfBite}</strong></div>
+                      {r.allergies && r.allergies !== "None" && r.allergies !== "" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
                       {r.conditions.length > 0 && <div style={{ marginTop: 3 }}>Conditions: {r.conditions.join(", ")}</div>}
                     </div>
                   </div>

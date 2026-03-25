@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { locations } from "@/data/saintLuciaData";
+import { useBiteReports } from "@/context/BiteReportContext";
 
 interface BiteRecord {
   id: string;

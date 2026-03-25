@@ -8,6 +8,7 @@ const navItems = [
   { path: "/", label: "Home", icon: Bug },
   { path: "/map", label: "Risk Map", icon: Map },
   { path: "/community", label: "Community", icon: Users },
+  { path: "/report", label: "Report", icon: ClipboardList },
   { path: "/prediction", label: "AI Prediction", icon: Brain },
   { path: "/results", label: "Results", icon: BarChart3 },
   { path: "/about", label: "About", icon: BookOpen },

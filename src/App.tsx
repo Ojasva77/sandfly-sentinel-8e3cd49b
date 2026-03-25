@@ -9,6 +9,7 @@ import RiskMap from "./pages/RiskMap";
 import CommunityTips from "./pages/CommunityTips";
 import Prediction from "./pages/Prediction";
 import Results from "./pages/Results";
+import ReportBite from "./pages/ReportBite";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 

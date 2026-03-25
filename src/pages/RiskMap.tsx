@@ -13,7 +13,19 @@ interface BiteReport {
   lng: number;
   time: string;
   conditions: string[];
+  name?: string;
+  bodyPart?: string;
+  allergies?: string;
 }
+
+// ── Demo community bite reports (synced with Report page) ──────────
+const demoBiteReports: BiteReport[] = [
+  { id: 1, lat: 13.8563 + 0.003, lng: -61.0566 - 0.002, time: "Evening", conditions: ["Humid", "No wind", "Near forest"], name: "Maria J.", bodyPart: "Ankles", allergies: "Mild swelling" },
+  { id: 2, lat: 13.82 + 0.004, lng: -60.90 - 0.003, time: "Afternoon", conditions: ["Humid", "Standing water nearby"], name: "Keon B.", bodyPart: "Arms", allergies: "None" },
+  { id: 3, lat: 13.87 - 0.002, lng: -61.04 + 0.001, time: "Evening", conditions: ["No wind", "Near forest", "Humid"], name: "Aunty Rose", bodyPart: "Legs", allergies: "Itchy rash for 2 days" },
+  { id: 4, lat: 14.01 + 0.002, lng: -60.99 - 0.001, time: "Morning", conditions: ["Rainy", "Humid"], name: "Jason T.", bodyPart: "Neck" },
+  { id: 5, lat: 13.77 + 0.003, lng: -61.05 + 0.002, time: "Night", conditions: ["No wind", "Near forest"], name: "Ms. Charles", bodyPart: "Legs", allergies: "Swelling" },
+];
 
 // ── Slider ─────────────────────────────────────────────────────────
 function RangeSlider({ label, value, onChange, min, max, unit, icon: Icon, color }: {
@@ -143,7 +155,7 @@ export default function RiskMap() {
   const [rainfallMod, setRainfallMod] = useState(0);
   const [humidityMod, setHumidityMod] = useState(0);
   const [showForest, setShowForest] = useState(false);
-  const [biteReports, setBiteReports] = useState<BiteReport[]>([]);
+  const [biteReports, setBiteReports] = useState<BiteReport[]>(demoBiteReports);
   const [showBiteForm, setShowBiteForm] = useState(false);
   const [tapResult, setTapResult] = useState<{ lat: number; lng: number; data: ReturnType<typeof estimatePointRisk> } | null>(null);
 
@@ -247,10 +259,14 @@ export default function RiskMap() {
             {biteReports.map((r) => (
               <Marker key={r.id} position={[r.lat, r.lng]} icon={biteIcon}>
                 <Popup>
-                  <div className="text-xs">
-                    <strong>🦟 Bite Report</strong><br />
-                    Time: {r.time}<br />
-                    {r.conditions.length > 0 && <>Conditions: {r.conditions.join(", ")}</>}
+                  <div className="text-xs min-w-[160px]">
+                    <strong className="text-sm">🦟 {r.name || "Anonymous"}</strong>
+                    <div style={{ marginTop: 4 }}>
+                      {r.bodyPart && <div>🦵 Bitten on: <strong>{r.bodyPart}</strong></div>}
+                      <div>🕐 Time: <strong>{r.time}</strong></div>
+                      {r.allergies && r.allergies !== "None" && <div>⚠️ Reaction: <strong>{r.allergies}</strong></div>}
+                      {r.conditions.length > 0 && <div style={{ marginTop: 3 }}>Conditions: {r.conditions.join(", ")}</div>}
+                    </div>
                   </div>
                 </Popup>
               </Marker>

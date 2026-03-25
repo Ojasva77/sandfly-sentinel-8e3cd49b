@@ -12,7 +12,7 @@ const conditionOptions = ["Humid", "Rainy", "No wind", "Near forest", "Standing 
 const bodyParts = ["Ankles", "Legs", "Arms", "Hands", "Face", "Neck", "Back", "Other"];
 
 export default function ReportBite() {
-  const [records, setRecords] = useState<BiteRecord[]>(demoRecords);
+  const { reports: records, addReport } = useBiteReports();
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({
     name: "", location: "", timeOfBite: timeOptions[0], date: new Date().toISOString().split("T")[0],
@@ -28,10 +28,7 @@ export default function ReportBite() {
 
   const handleSubmit = () => {
     if (!form.name.trim() || !form.location) return;
-    const record: BiteRecord = {
-      id: Date.now().toString(), ...form, createdAt: new Date(),
-    };
-    setRecords(prev => [record, ...prev]);
+    addReport(form);
     setForm({ name: "", location: "", timeOfBite: timeOptions[0], date: new Date().toISOString().split("T")[0], bodyPart: "", conditions: [], allergies: "", notes: "" });
     setShowForm(false);
   };

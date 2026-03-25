@@ -7,26 +7,7 @@ import { useBiteReports } from "@/context/BiteReportContext";
 import { TreePine, MapPin, Bug, Droplets, Wind, CloudRain, Trees } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 
-// ── Types ──────────────────────────────────────────────────────────
-interface BiteReport {
-  id: number;
-  lat: number;
-  lng: number;
-  time: string;
-  conditions: string[];
-  name?: string;
-  bodyPart?: string;
-  allergies?: string;
-}
-
-// ── Demo community bite reports (synced with Report page) ──────────
-const demoBiteReports: BiteReport[] = [
-  { id: 1, lat: 13.8563 + 0.003, lng: -61.0566 - 0.002, time: "Evening", conditions: ["Humid", "No wind", "Near forest"], name: "Maria J.", bodyPart: "Ankles", allergies: "Mild swelling" },
-  { id: 2, lat: 13.82 + 0.004, lng: -60.90 - 0.003, time: "Afternoon", conditions: ["Humid", "Standing water nearby"], name: "Keon B.", bodyPart: "Arms", allergies: "None" },
-  { id: 3, lat: 13.87 - 0.002, lng: -61.04 + 0.001, time: "Evening", conditions: ["No wind", "Near forest", "Humid"], name: "Aunty Rose", bodyPart: "Legs", allergies: "Itchy rash for 2 days" },
-  { id: 4, lat: 14.01 + 0.002, lng: -60.99 - 0.001, time: "Morning", conditions: ["Rainy", "Humid"], name: "Jason T.", bodyPart: "Neck" },
-  { id: 5, lat: 13.77 + 0.003, lng: -61.05 + 0.002, time: "Night", conditions: ["No wind", "Near forest"], name: "Ms. Charles", bodyPart: "Legs", allergies: "Swelling" },
-];
+// (BiteReport type and demo data now live in BiteReportContext)
 
 // ── Slider ─────────────────────────────────────────────────────────
 function RangeSlider({ label, value, onChange, min, max, unit, icon: Icon, color }: {

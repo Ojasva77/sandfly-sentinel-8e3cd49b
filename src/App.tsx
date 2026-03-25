@@ -9,6 +9,7 @@ import RiskMap from "./pages/RiskMap";
 import CommunityTips from "./pages/CommunityTips";
 import Prediction from "./pages/Prediction";
 import Results from "./pages/Results";
+import ReportBite from "./pages/ReportBite";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/" element={<Home />} />
             <Route path="/map" element={<RiskMap />} />
             <Route path="/community" element={<CommunityTips />} />
+            <Route path="/report" element={<ReportBite />} />
             <Route path="/prediction" element={<Prediction />} />
             <Route path="/results" element={<Results />} />
             <Route path="/about" element={<About />} />

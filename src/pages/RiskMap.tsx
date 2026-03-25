@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, CircleMarker, Tooltip, useMapEvents, Marker, P
 import { motion, AnimatePresence } from "framer-motion";
 import L from "leaflet";
 import { locations, calculateRiskScore, getRiskLevel, getRiskBgColor } from "@/data/saintLuciaData";
+import { useBiteReports } from "@/context/BiteReportContext";
 import { TreePine, MapPin, Bug, Droplets, Wind, CloudRain, Trees } from "lucide-react";
 import "leaflet/dist/leaflet.css";
 

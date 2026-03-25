@@ -134,10 +134,10 @@ function FactorBar({ label, value, max, icon: Icon, color, isTop }: {
 
 // ── Main Component ─────────────────────────────────────────────────
 export default function RiskMap() {
+  const { reports: biteReports, addReport } = useBiteReports();
   const [rainfallMod, setRainfallMod] = useState(0);
   const [humidityMod, setHumidityMod] = useState(0);
   const [showForest, setShowForest] = useState(false);
-  const [biteReports, setBiteReports] = useState<BiteReport[]>(demoBiteReports);
   const [showBiteForm, setShowBiteForm] = useState(false);
   const [tapResult, setTapResult] = useState<{ lat: number; lng: number; data: ReturnType<typeof estimatePointRisk> } | null>(null);
 

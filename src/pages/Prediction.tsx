@@ -75,10 +75,12 @@ export default function Prediction() {
             <label className="text-sm font-semibold text-foreground mb-1.5 block">🧴 Skin Type</label>
             <select value={skinType} onChange={(e) => setSkinType(e.target.value)}
               className="w-full rounded-xl border border-border bg-background px-3 py-2.5 text-sm text-foreground focus:ring-2 focus:ring-primary">
-              <option value="fair">Fair / Light</option>
-              <option value="medium">Medium</option>
-              <option value="olive">Olive</option>
-              <option value="dark">Dark</option>
+              <option value="type1">Type I – Very fair, always burns, never tans</option>
+              <option value="type2">Type II – Fair, burns easily, tans minimally</option>
+              <option value="type3">Type III – Medium, sometimes burns, tans gradually</option>
+              <option value="type4">Type IV – Olive, rarely burns, tans easily</option>
+              <option value="type5">Type V – Brown, very rarely burns, tans darkly</option>
+              <option value="type6">Type VI – Dark brown/black, never burns</option>
             </select>
           </div>
 

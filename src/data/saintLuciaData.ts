@@ -30,6 +30,16 @@ export const locations: LocationData[] = [
   { id: "marigot-bay", name: "Marigot Bay", lat: 13.9600, lng: -61.0233, rainfall: 210, humidity: 82, windSpeed: 10, forestCoverage: true, elevation: 5, population: 1000 },
   { id: "rodney-bay", name: "Rodney Bay", lat: 14.0800, lng: -60.9550, rainfall: 155, humidity: 75, windSpeed: 18, forestCoverage: false, elevation: 4, population: 12000 },
   { id: "fond-st-jacques", name: "Fond St Jacques", lat: 13.8700, lng: -61.0400, rainfall: 260, humidity: 88, windSpeed: 5, forestCoverage: true, elevation: 120, population: 800 },
+  // Central / interior locations to fill the middle of the island
+  { id: "morne-gimie", name: "Morne Gimie", lat: 13.8570, lng: -61.0150, rainfall: 280, humidity: 92, windSpeed: 5, forestCoverage: true, elevation: 950, population: 100 },
+  { id: "quilesse", name: "Quilesse Forest", lat: 13.8350, lng: -60.9600, rainfall: 260, humidity: 89, windSpeed: 6, forestCoverage: true, elevation: 600, population: 150 },
+  { id: "barre-de-lisle", name: "Barre de l'Isle", lat: 13.9300, lng: -60.9600, rainfall: 245, humidity: 86, windSpeed: 7, forestCoverage: true, elevation: 450, population: 200 },
+  { id: "central-highlands", name: "Central Highlands", lat: 13.8900, lng: -60.9700, rainfall: 255, humidity: 88, windSpeed: 6, forestCoverage: true, elevation: 500, population: 120 },
+  { id: "millet-bird", name: "Millet Bird Sanctuary", lat: 13.9100, lng: -61.0000, rainfall: 240, humidity: 85, windSpeed: 7, forestCoverage: true, elevation: 350, population: 80 },
+  { id: "la-sorciere", name: "La Sorcière", lat: 13.9500, lng: -60.9300, rainfall: 230, humidity: 84, windSpeed: 8, forestCoverage: true, elevation: 400, population: 100 },
+  { id: "praslin", name: "Praslin", lat: 13.8700, lng: -60.9050, rainfall: 215, humidity: 81, windSpeed: 11, forestCoverage: true, elevation: 40, population: 2200 },
+  { id: "mon-repos", name: "Mon Repos", lat: 13.8450, lng: -60.9300, rainfall: 225, humidity: 83, windSpeed: 9, forestCoverage: true, elevation: 180, population: 1800 },
+  { id: "des-cartiers", name: "Des Cartiers Rainforest", lat: 13.8100, lng: -60.9500, rainfall: 275, humidity: 91, windSpeed: 4, forestCoverage: true, elevation: 700, population: 50 },
 ];
 
 // Calculate sandfly risk score (0-100) based on environmental factors

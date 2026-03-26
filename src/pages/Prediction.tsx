@@ -19,7 +19,7 @@ export default function Prediction() {
   const [forest, setForest] = useState(true);
 
   // Personal bite risk
-  const [skinType, setSkinType] = useState("medium");
+  const [skinType, setSkinType] = useState("type3");
   const [bodyTemp, setBodyTemp] = useState(37);
   const [bloodType, setBloodType] = useState("O");
   const [timeOfDay, setTimeOfDay] = useState("dusk");
